@@ -1,27 +1,37 @@
-# HubsQuoteConverter
+# Hubs Quote Filler
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+## TODOS
 
-## Development server
+- [ ] Phase 1
+  - [x] Upload project to github
+  - [ ] Update quote interface
+  - [ ]
+- [ ] Phase 2
+  - [ ]
+- [ ] Phase 3
+  - [ ]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Setting Up and Running an Angular App
 
-## Code scaffolding
+Follow these steps to set up and run the Angular app:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 1. **Install Node.js:**
 
-## Build
+Angular requires Node.js to run. Download and install [Node.js](https://nodejs.org/) if you haven't already.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 2. **Install Angular CLI:**
 
-## Running unit tests
+Angular CLI is a command line interface for Angular. Install it globally using npm (Node Package Manager).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install -g @angular/cli
+```
 
-## Running end-to-end tests
+## 3. **Clone the Repository:**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clone the project repository from GitHub to your local machine, and navigate to the project directory.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/NichoSanti/hubs-quote-filler.git
+cd repo-name
+```
