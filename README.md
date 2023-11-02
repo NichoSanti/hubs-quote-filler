@@ -33,5 +33,5 @@ Clone the project repository from GitHub to your local machine, and navigate to 
 
 ```bash
 git clone https://github.com/NichoSanti/hubs-quote-filler.git
-cd repo-name
+cd hubs-quote-filler
 ```
