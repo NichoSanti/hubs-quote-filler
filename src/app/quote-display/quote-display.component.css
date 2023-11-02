@@ -1,0 +1,17 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+table {
+  width: 100%;
+  white-space: nowrap;
+  table-layout: auto;
+}
+
+[class*="mat-column-"],
+th.mat-header-cell,
+td.mat-cell {
+  width: 300px;
+}

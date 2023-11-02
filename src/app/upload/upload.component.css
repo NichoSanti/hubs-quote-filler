@@ -1,0 +1,95 @@
+.upload-page-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50vh;
+}
+
+.upload-wrapper {
+  flex: 3;
+  padding: 4rem 4rem 5rem;
+}
+
+.request-technology-wrapper {
+  flex: 2;
+  padding: 4rem 4rem 5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.upload-page-wrapper .h4 {
+  font-weight: 550;
+}
+
+.request-technology-wrapper .technology-selector {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.request-technology-wrapper .technology-selector .card-content {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius: 3px;
+  padding: 1rem;
+  border-radius: 3px;
+  gap: 8px;
+}
+
+.request-technology-wrapper .technology-selector .card-content:hover {
+  border-color: #006fff;
+}
+
+.request-technology-wrapper .technology-selector .card-content .card-details {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.request-technology-wrapper
+  .technology-selector
+  .card-content
+  .card-details
+  .card-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.request-technology-wrapper .technology-selector .card-content .card-icon {
+  align-self: center;
+}
+
+.upload-wrapper .uploader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  border: 1px dashed rgba(0, 0, 0, 0.13);
+  border-radius: 3px 3px 0 0;
+  cursor: pointer;
+  padding: 1rem 0;
+}
+
+.upload-wrapper .uploader:hover {
+  border-color: #006fff;
+  background-color: #e6e6fa;
+}
+
+.upload-wrapper .uploader input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.quote-display-wrapper {
+  max-width: 100%;
+}

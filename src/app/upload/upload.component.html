@@ -1,0 +1,67 @@
+<div class="upload-page-wrapper" *ngIf="!isSubmitted">
+  <section class="request-technology-wrapper">
+    <h3 class="h4">Select technology</h3>
+    <div class="technology-selector">
+      <div class="card-content">
+        <div class="card-icon">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Check icon"
+            fontIcon="check"
+          />
+        </div>
+        <div class="card-details">
+          <div class="card-title">
+            <span>CNC machining</span>
+          </div>
+          <div class="card-description">
+            <span>Milling (3-axis, 5-axis), turning</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-icon">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Check icon"
+            fontIcon="check"
+          />
+        </div>
+        <div class="card-details">
+          <div class="card-title">
+            <span>3D printing</span>
+          </div>
+          <div class="card-description">
+            <span>FDM, SLA, SLS, MJF</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="card-icon">
+          <mat-icon aria-hidden="false" fontIcon="check" />
+        </div>
+        <div class="card-details">
+          <div class="card-title">
+            <span>Sheet metal</span>
+          </div>
+          <div class="card-description">
+            <span>Laser cutting, bending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="upload-wrapper">
+    <h3 class="h4">Upload your CSV files now:</h3>
+    <div class="uploader">
+      <mat-icon aria-hidden="false" fontIcon="upload" />
+      <label> Drag and drop here or select files </label>
+      <input type="file" (change)="onFileChange($event)" accept=".csv" />
+      <p>File types: CSV only pls for now</p>
+    </div>
+  </section>
+</div>
+
+<section class="quote-display-wrapper" *ngIf="isSubmitted">
+  <app-quote-display [uploadData]="uploadData"></app-quote-display>
+</section>

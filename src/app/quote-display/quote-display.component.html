@@ -1,0 +1,91 @@
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="partName">
+      <th mat-header-cell *matHeaderCellDef>Part Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.partName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="technology">
+      <th mat-header-cell *matHeaderCellDef>Technology</th>
+      <td mat-cell *matCellDef="let element">{{ element.technology }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="material">
+      <th mat-header-cell *matHeaderCellDef>Material</th>
+      <td mat-cell *matCellDef="let element">{{ element.material }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="finish">
+      <th mat-header-cell *matHeaderCellDef>Finish</th>
+      <td mat-cell *matCellDef="let element">{{ element.finish }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef>Color</th>
+      <td mat-cell *matCellDef="let element">{{ element.color }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="partMarkings">
+      <th mat-header-cell *matHeaderCellDef>PartMarkings</th>
+      <td mat-cell *matCellDef="let element">{{ element.partMarkings }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="generalTolerance">
+      <th mat-header-cell *matHeaderCellDef>GeneralTolerance</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.generalTolerance }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tightestLinearTolerance">
+      <th mat-header-cell *matHeaderCellDef>TightestLinearTolerance</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.tightestLinearTolerance }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fits">
+      <th mat-header-cell *matHeaderCellDef>Fits</th>
+      <td mat-cell *matCellDef="let element">{{ element.fits }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="hasThreads">
+      <th mat-header-cell *matHeaderCellDef>HasThreads</th>
+      <td mat-cell *matCellDef="let element">{{ element.hasThreads }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="internalCorners">
+      <th mat-header-cell *matHeaderCellDef>InternalCorners</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.internalCorners }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="technicalDrawing">
+      <th mat-header-cell *matHeaderCellDef>TechnicalDrawing</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.technicalDrawing }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="customRequirements">
+      <th mat-header-cell *matHeaderCellDef>CustomRequirements</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.customRequirements }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="note">
+      <th mat-header-cell *matHeaderCellDef>Note</th>
+      <td mat-cell *matCellDef="let element">{{ element.note }}</td>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table>
+</div>
