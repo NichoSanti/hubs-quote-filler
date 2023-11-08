@@ -3,6 +3,7 @@ import * as Papa from 'papaparse';
 
 import { UploadInterface } from '../types/upload.interface';
 import { LineItemInterface } from '../types/lineItem.interface';
+import { SupabaseService } from '../supabase.service';
 
 @Component({
   selector: 'app-upload',
@@ -12,6 +13,8 @@ import { LineItemInterface } from '../types/lineItem.interface';
 export class UploadComponent {
   isSubmitted: boolean = false;
   uploadData: UploadInterface = { lineItems: [] };
+
+  constructor(private supabaseService: SupabaseService) {}
 
   onFileChange(event: any): void {
     const file = event.target.files[0];
@@ -41,9 +44,28 @@ export class UploadComponent {
           );
           this.uploadData.lineItems = lineItems;
           this.isSubmitted = true;
+
+          // Now call the async function to handle the upload
+          this.handleUpload();
         },
         header: true,
       });
+    }
+  }
+
+  // Separate async function to handle the upload
+  async handleUpload(): Promise<void> {
+    try {
+      const tableName = 'line_items_csv'; // Replace with your actual table name
+      const insertedData = await this.supabaseService.uploadData(
+        tableName,
+        this.uploadData.lineItems
+      );
+      console.log('Data successfully uploaded to Supabase', insertedData);
+      // Handle success scenario (e.g., show success message to user)
+    } catch (error) {
+      console.error('Error uploading data to Supabase', error);
+      // Handle error scenario (e.g., show error message to user)
     }
   }
 }
