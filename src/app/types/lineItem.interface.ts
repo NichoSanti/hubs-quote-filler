@@ -63,7 +63,4 @@ export interface LineItemInterface {
   fits: 'No' | 'Yes';
   hasThreads: 'No' | 'Yes';
   internalCorners: '2mm radii' | 'Sharp';
-  technicalDrawing: 'Yes' | 'No';
-  customRequirements: string;
-  note: string;
 }

@@ -56,11 +56,13 @@ export class QuoteFormComponent implements OnChanges {
       color: [lineItem.color, Validators.required],
       partMarkings: [lineItem.partMarkings, Validators.required],
       generalTolerance: [lineItem.generalTolerance, Validators.required],
-      hasThreads: [lineItem.hasThreads, Validators.required],
+      tightestLinearTolerance: [
+        lineItem.tightestLinearTolerance || 'No',
+        Validators.required,
+      ],
+      fits: [lineItem.fits, Validators.required],
+      hasThreads: [lineItem.hasThreads || 'No', Validators.required],
       internalCorners: [lineItem.internalCorners, Validators.required],
-      technicalDrawing: [lineItem.technicalDrawing, Validators.required],
-      customRequirements: [lineItem.customRequirements, Validators.required],
-      note: [lineItem.note, Validators.required],
     });
   }
 }
