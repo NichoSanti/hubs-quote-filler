@@ -47,6 +47,7 @@ export class UploadComponent {
           this.uploadData.lineItems = lineItems;
           this.isSubmitted = true;
 
+          // sends data and navigates to quote-form
           this.router.navigate(['/quote-form'], {
             state: { data: this.uploadData },
           });
