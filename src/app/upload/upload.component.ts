@@ -52,6 +52,7 @@ export class UploadComponent {
           });
 
           // Now call the async function to handle the upload
+
           // this.handleUpload();
         },
         header: true,
