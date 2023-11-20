@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 import * as Papa from 'papaparse';
 
 import { UploadInterface } from '../types/upload.interface';
@@ -14,7 +16,10 @@ export class UploadComponent {
   isSubmitted: boolean = false;
   uploadData: UploadInterface = { lineItems: [] };
 
-  constructor(private supabaseService: SupabaseService) {}
+  constructor(
+    private supabaseService: SupabaseService,
+    private router: Router
+  ) {}
 
   onFileChange(event: any): void {
     const file = event.target.files[0];
@@ -26,7 +31,7 @@ export class UploadComponent {
           const lineItems: LineItemInterface[] = result.data.map(
             (row: any) => ({
               partName: row['Part Name'],
-              quantity: Number(row['Quantity']),
+              quantity: row['Quantity'],
               technology: row['Technology'],
               material: row['Material'],
               finish: row['Finish'],
@@ -37,16 +42,17 @@ export class UploadComponent {
               fits: row['Fits'],
               hasThreads: row['Has threads'],
               internalCorners: row['Internal corners'],
-              technicalDrawing: row['Technical drawing'],
-              customRequirements: row['Custom requirements'],
-              note: row['Note'],
             })
           );
           this.uploadData.lineItems = lineItems;
           this.isSubmitted = true;
 
+          this.router.navigate(['/quote-form'], {
+            state: { data: this.uploadData },
+          });
+
           // Now call the async function to handle the upload
-          this.handleUpload();
+          // this.handleUpload();
         },
         header: true,
       });

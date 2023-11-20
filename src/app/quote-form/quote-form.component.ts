@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { UploadInterface } from '../types/upload.interface';
 import { LineItemInterface } from '../types/lineItem.interface';
 
@@ -12,10 +14,14 @@ export class QuoteFormComponent implements OnChanges {
   @Input() uploadData?: UploadInterface;
   lineItemsForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private route: ActivatedRoute) {
     this.lineItemsForm = this.fb.group({
       lineItems: this.fb.array([]),
     });
+
+    // Retrives state passed from the router
+    const navigation = this.route.snapshot;
+    this.uploadData = navigation.data?.['uploadData'] ?? null;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
